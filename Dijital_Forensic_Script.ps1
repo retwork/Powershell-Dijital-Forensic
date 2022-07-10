@@ -891,7 +891,7 @@ $ARPCacheDurumu  = Get-NetNeighbor | Select-Object State,InterfaceAlias,ipaddres
 $RoutePath = Get-NetRoute | Select-Object InterfaceAlias, InterfaceIndex, RouteMetric  | ConvertTo-Html -fragment -PreContent "<h2>Route Path Durumu</h2>"
 
 $Report = ConvertTo-HTML -Body "  $SistemAdi $SistemBilgileri $IsletimSistemiGenelBilgi $LocalGroupMember $LokalGrup $PowershellHistory  $GunlukKullaniciAktiviteleri $Antivirus $Downloads $StartupProgs $ZamanlanmisGorevler $SonDosyaOlusturmaIslemleri $WmiObject $SistemDiskKlasorleri $YukluProgramlar $WindowsUpdateDurum $UpdateDurumu  $SistemServisDurumu $TempDosyalari $BekleyenReboot $64BitUygulamalar $32BitUygulamalar $USBAygitDurum $USBGecmisi  $NetworkName $AgAdaptoru $InterfaceKategori $NetworkIstatistikleri $ARPCacheDurumu $RoutePath $DNSCacheBilgisi $TarayiciGecmisi" ` -Title "Computer Information" -Head $header -PostContent "<p>Creation Date: $(Get-Date)<p>"
-$Report | Out-File C:\TestRapor.html 
+$Report | Out-File C:\ForensicReport.html 
 
 #$BiosBilgisi
 #$DiskBilgisi
